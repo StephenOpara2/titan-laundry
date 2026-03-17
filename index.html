@@ -941,7 +941,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav shrink on scroll
   const nav = document.getElementById('mainNav');
   window.addEventListener('scroll', () => {
@@ -963,4 +963,13 @@
   }
 
   // Active nav link on scroll
-  const s
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
+  }, { passive: true });
+</script>
+</body>
+</html>
