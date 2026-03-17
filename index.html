@@ -316,7 +316,7 @@
     }
 
     /* reveal */
-    .rv { opacity:0; transform:translateY(30px); transition:opacity .7s ease, transform .7s ease; }
+    .rv { opacity:1; transform:translateY(0); transition:opacity .7s ease, transform .7s ease; }
     .rv.in { opacity:1; transform:translateY(0); }
     .rv.d1 { transition-delay:.1s; }
     .rv.d2 { transition-delay:.2s; }
@@ -1060,7 +1060,7 @@
   // Hero bg — preload then swap
   const heroBg = document.getElementById('heroBg');
   const bgImg = new Image();
-  bgImg.src = 'hero.jpg';
+  bgImg.src = 'https://picsum.photos/seed/titan1/1600/900';
   bgImg.onload = () => {
     heroBg.style.backgroundImage = `url('${bgImg.src}')`;heroBg.style.backgroundSize='cover';heroBg.style.backgroundPosition='center';
     heroBg.classList.add('loaded');
